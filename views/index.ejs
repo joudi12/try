@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--هنا نضع  الاسماء متل الداتا بيز-->
+    <h4>Saved Books</h4>
+    <p >Number of books: <%= result.length %> </p>
+    <%result.forEach(value=>{%>
+        <h1><%= value.title%></h1>
+        <img src="<%= value.image_url%>" alt="">
+        <h3><%= value.authors%></h3>
+        <p><%= value.description%></p>
+        
+        
+            <%})%>
+</body>
+</html>

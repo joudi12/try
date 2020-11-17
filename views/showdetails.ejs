@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1><%= result.title%></h1>
+    <img src="<%= result.image_url%>" alt="">
+    <h3><%= result.authors%></h3>
+    <p><%= result.description%></p>
+    <form action="/fav/<%= result.id%>?_method=PUT" method="POST">
+        <input type="text" name="title" value="<%=result.title%>">
+      
+        <input  type="text" name="authors" value="<%= result.authors%>">
+        <input  type="text" name="description" value="<%= result.description%>">
+        <button type="submit" id="/fav/<%= result.id%>">update</button>
+    
+    </form>
+    <form action="/fav/<%= result.id%>?_method=DELETE" method="POST">
+       
+        <button type="submit" >DELETE</button>
+    
+    </form>
+</body>
+</html>

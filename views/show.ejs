@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%result.forEach(value=>{%>
+<h1><%= value.title%></h1>
+<img src="<%= value.img%>" alt="">
+<h3><%= value.authors%></h3>
+
+<form action="/fav" method="POST">
+    <input style="display: none;" type="text" name="title" value="<%= value.title%>">
+    <input style="display: none;" type="text" name="img" value="<%= value.img%>">
+    <input style="display: none;" type="text" name="authors" value="<%= value.authors%>">
+    <input style="display: none;" type="text" name="description" value="<%= value.description%>">
+    <button type="submit" id="/fav/<%= value.id%>">add to favorite</button>
+  <!--انتبهي عل كيفية كتابة id-->
+</form>
+    <%})%>
+</body>
+</html>

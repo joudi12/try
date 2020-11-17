@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%result.forEach(value=>{%>
+        <h1><%= value.type%></h1>
+        <h3><%= value.text%></h3>
+        <form action="/details" method="POST">
+            <input style="display: none;" type="text" name="text" value="<%= value.text%>">
+            <input style="display: none;" type="text" name="type" value="<%= value.type%>">
+            <button type="submit" id="/details/<%= value.id%>"> show details</button>
+        </form>
+        <a href="/Fav/<%= value.id%>"> view details</a>
+           <% })%>
+</body>
+</html>
